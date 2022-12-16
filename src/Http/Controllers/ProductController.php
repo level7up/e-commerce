@@ -10,5 +10,10 @@ Class ProductController extends Controller
     {
         return $dt->render('ecommerce::products.index');
     }
+    
+    public function create()
+    {
+        return view('ecommerce::products.create');
+    }
 
 }

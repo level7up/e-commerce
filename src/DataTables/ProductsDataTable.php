@@ -3,6 +3,7 @@ namespace Level7up\ECommerce\DataTables;
 
 use Level7up\ECommerce\Models\Product;
 use Level7up\Dashboard\DataTables\DataTable;
+use Level7up\Dashboard\Vendor\Yajra\DataTables\Html\Column;
 
 class ProductsDataTable extends DataTable
 {   
