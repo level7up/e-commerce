@@ -1,0 +1,24 @@
+{
+    "name": "level7up/e-commerce",
+    "type": "library",
+    
+    "authors": [
+        {
+            "name": "level7up",
+            "email": "abdoleemos200@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Level7up\\ECommerce\\": "src/"
+        }
+    },
+    "extra": {
+		"laravel": {
+			"providers": [
+				"Level7up\\ECommerce\\Providers\\EcommerceServiceProvider"
+			]
+		}
+	},
+    "require": {}
+}
