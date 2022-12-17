@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->float('price')->default(0);
             $table->integer('qty')->default(-1);
+            $table->boolean('special')->default(0);
             $table->unsignedBigInteger('category_id')->references('id')->on('product_categories')->onUpdate('RESTRICT')->onDelete('CASCADE');
             $table->softDeletes();
             $table->timestamps();
