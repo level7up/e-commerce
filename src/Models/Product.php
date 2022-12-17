@@ -24,4 +24,15 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    
+    
+    //  ********** GETTERS ********* 
+    public function getImageUrlAttribute()
+    {
+        if ($this->image) {
+            return "/storage/".$this->image;
+        }
+
+        return asset('dashboard/media/svg/files/blank-image.svg');
+    }
 }

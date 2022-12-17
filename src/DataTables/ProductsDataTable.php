@@ -10,8 +10,13 @@ class ProductsDataTable extends DataTable
     protected $model = Product::class;
     public function dataTable($query)
     {
-        $dt = parent::dataTable($query->withTrashed());
-        $rawCols = $this->getRawColumns();
+        $dt = parent::dataTable($query->withTrashed())
+            ->editColumn('image', function($row){
+                return '<div class="symbol symbol-50px">
+                        <img src="'.$row->image_url.'" alt="'.$row->name.'">
+                    </div>';
+            });
+        $rawCols = array_merge($this->getRawColumns(), ['image']);
         return $dt->rawColumns($rawCols);
     }
 
@@ -27,6 +32,7 @@ class ProductsDataTable extends DataTable
             [
                 Column::make('id'),
                 Column::make('name'),
+                Column::make('image'),
             ],
             parent::getColumns()
         );

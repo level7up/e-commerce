@@ -21,10 +21,11 @@ class Category extends Model
         return $this->hasMany(Product::class);
     }
     
-    public function getImageUrlAttribute($original)
+    
+    public function getImageUrlAttribute()
     {
-        if ($original) {
-            return "/storage/".$original;
+        if ($this->image) {
+            return "/storage/".$this->image;
         }
 
         return asset('dashboard/media/svg/files/blank-image.svg');
